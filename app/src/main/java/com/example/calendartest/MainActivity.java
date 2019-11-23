@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, EditEventActivity.class);
-        startActivity(intent);
         Button button = findViewById(R.id.button);
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -51,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void insertToCalendar() {
-        /*
-        Intent intent = new Intent(Intent.ACTION_INSERT).setData(CalendarContract.Events.CONTENT_URI);
+        Intent intent = new Intent(this, EditEventActivity.class);
         startActivity(intent);
-        */
     }
 }

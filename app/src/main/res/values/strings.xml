@@ -11,4 +11,5 @@
     <string name="edit_description">Description</string>
     <string name="time_button_text">Set Time</string>
     <string name="date_button_text">Set Date</string>
+    <string name="finish_button_text">Finish</string>
 </resources>

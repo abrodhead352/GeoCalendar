@@ -5,13 +5,18 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.app.DatePickerDialog;
+import android.provider.CalendarContract.Events;
 
 import java.util.Calendar;
 
@@ -40,6 +45,7 @@ public class EditEventActivity extends AppCompatActivity {
         Button endDateButton = findViewById(R.id.endDateButton);
 
 
+        Button finishButton = findViewById(R.id.finishButton);
     }
 
     public void pickStartTime(View view) {
@@ -80,6 +86,7 @@ public class EditEventActivity extends AppCompatActivity {
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             // Do something with the time chosen by the user
             startHour = hourOfDay;
+            startMinute = minute;
         }
     }
 
@@ -100,6 +107,9 @@ public class EditEventActivity extends AppCompatActivity {
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             // Do something with the date chosen by the user
+            startDay = day;
+            startMonth = month;
+            startYear = year;
         }
     }
 
@@ -120,6 +130,8 @@ public class EditEventActivity extends AppCompatActivity {
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             // Do something with the time chosen by the user
+            endHour = hourOfDay;
+            endMinute = minute;
         }
     }
 
@@ -145,5 +157,25 @@ public class EditEventActivity extends AppCompatActivity {
             endDay = day;
 
         }
+    }
+
+    public void submitToCalendar(View view) {
+        EditText titleEditText = findViewById(R.id.title_edit_text);
+        EditText descriptionEditText = findViewById(R.id.description_edit_text);
+        Calendar beginTime = Calendar.getInstance();
+        beginTime.set(startYear, startMonth, startDay, startHour, startMinute);
+        Calendar endTime = Calendar.getInstance();
+        endTime.set(endYear, endMonth, endDay, endHour, endMinute);
+        String title = titleEditText.getText().toString();
+        String description = descriptionEditText.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                .putExtra(Events.TITLE, title)
+                .putExtra(Events.DESCRIPTION, description)
+                .putExtra(Events.EVENT_LOCATION, "LOCATION");
+        startActivity(intent);
     }
 }
