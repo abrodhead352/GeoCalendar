@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditEventActivity"
+    android:columnCount="4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_title"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:id="@+id/title_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_margin="10dp"
+        android:layout_columnSpan="3"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_start"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/startDateButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/date_button_text"
+        android:onClick="pickStartDate"
+        />
+
+    <Button
+        android:id="@+id/startTimeButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/time_button_text"
+        android:onClick="pickStartTime"
+        />
+
+    <TextView
+        android:id="@+id/start_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_end"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/endDateButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/date_button_text"
+        android:onClick="pickEndDate"
+        />
+
+    <Button
+        android:id="@+id/endTimeButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/time_button_text"
+        android:onClick="pickEndTime"
+        />
+
+    <TextView
+        android:id="@+id/end_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_description"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_margin="10dp"
+        android:layout_columnSpan="3"
+        />
+
+
+</GridLayout>

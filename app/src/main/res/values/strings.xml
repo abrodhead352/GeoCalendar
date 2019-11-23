@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Calendar Test</string>
+    <string name="add_dialog_title">Add new event?</string>
+    <string name="add_dialog_message">Would you like to create a new event?</string>
+    <string name="dialog_postive_button">Yes</string>
+    <string name="dialog_negative_button">No</string>
+    <string name="title_activity_edit_event">EditEventActivity</string>
+    <string name="edit_title">Title</string>
+    <string name="edit_start">Start Time</string>
+    <string name="edit_end">End time</string>
+    <string name="edit_description">Description</string>
+    <string name="time_button_text">Set Time</string>
+    <string name="date_button_text">Set Date</string>
+</resources>
